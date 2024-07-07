@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+    - name: Deploy to Server
+      uses: easingthemes/ssh-deploy@main
+      with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          REMOTE_HOST: 8.140.205.223
+          REMOTE_USER: root
+          TARGET: /home/lying-flat/infinity-learn-server
+          EXCLUDE: ".git, node_modules, .github, .vscode"
+          SCRIPT_BEFORE: |
+            whoami
+            ls -al
+          SCRIPT_AFTER: |
+            cd /home/lying-flat/infinity-learn-server
+            chmod +x deploy.sh && ./deploy.sh
