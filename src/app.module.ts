@@ -13,6 +13,7 @@ import { UserModule } from './api/user/user.module';
 import { AuthModule } from './api/auth/auth.module';
 
 import loadDatabaseConfig from '@/config/mongo.config';
+import { DatabaseModule } from './database/database.module';
 
 const NODE_ENV = process.env.NODE_ENV ? 'production' : 'development';
 
@@ -26,6 +27,7 @@ const NODE_ENV = process.env.NODE_ENV ? 'production' : 'development';
       inject: [ConfigService],
       useFactory: loadDatabaseConfig
     }),
+    DatabaseModule,
     LogsModule,
     TasksModule,
     LoginModule,
