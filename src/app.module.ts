@@ -8,7 +8,6 @@ import { TasksModule } from './common/tasks/tasks.module';
 import { TimeoutInterceptor } from './core/interceptor/timeout.interceptor';
 import { AllExceptionFilter } from './core/filter/all-exception.filter';
 import { TransformInterceptor } from './core/interceptor/transform.interceptor';
-
 import { DatabaseModule } from './database/database.module';
 
 import loadDatabaseConfig from '@/config/mongo.config';

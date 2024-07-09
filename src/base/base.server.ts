@@ -10,9 +10,6 @@ import {
 } from 'typeorm';
 import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
 import { EntityId } from 'typeorm/repository/EntityId';
-
-//   import { PAGE_SIZE } from '@configs/config';
-//   import { LoggerService } from '@logger/custom.logger';
 import { Logger } from '@nestjs/common';
 
 import { IBaseService } from './i.base.service';
