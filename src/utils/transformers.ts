@@ -4,12 +4,14 @@ import { Transform } from 'class-transformer';
  * It converts a string or array of strings into an array of numbers
  */
 export const ConvertToArrayOfNumbers = () =>
-  Transform(params => {
+  Transform((params) => {
     const values = params.value;
     if (!values) {
       return [];
     }
-    return (Array.isArray(values) ? values : values.split(',')).map((value: string) => Number(value));
+    return (Array.isArray(values) ? values : values.split(',')).map(
+      (value: string) => Number(value)
+    );
   });
 
 /**

@@ -5,11 +5,10 @@ import { IsInt, IsOptional, Max, Min } from 'class-validator';
 // import { MessageCode } from '@constants/message-code';
 import { ConvertToNumber } from '@/utils/transformers';
 
-
 export const MessageCode = {
-    SUCCESS: 'SUCCESS',
-  };
-  
+  SUCCESS: 'SUCCESS'
+};
+
 export class PaginationResponse<T> {
   message: string;
   body: T | T[] | unknown | any;
@@ -29,10 +28,10 @@ export class PaginationResponse<T> {
         currentPage: 0,
         limit: 0,
         total: 0,
-        totalPages: 0,
-      },
+        totalPages: 0
+      }
     },
-    message = MessageCode.SUCCESS,
+    message = MessageCode.SUCCESS
   ) {
     this.message = message;
     this.body = body;
@@ -44,7 +43,7 @@ export class PaginationOption {
   @ApiProperty({
     default: 1,
     required: false,
-    description: 'Page number',
+    description: 'Page number'
   })
   @IsInt()
   @Type(() => Number)
@@ -56,7 +55,7 @@ export class PaginationOption {
   @ApiProperty({
     default: 10,
     required: false,
-    description: 'Limit result number',
+    description: 'Limit result number'
   })
   @IsInt()
   @Type(() => Number)

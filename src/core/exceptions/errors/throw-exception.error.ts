@@ -9,42 +9,58 @@ import {
   RequestTimeoutException,
   ServiceUnavailableException,
   UnauthorizedException,
-  UnsupportedMediaTypeException,
+  UnsupportedMediaTypeException
 } from '@nestjs/common';
 
 // 400
-export const throwBadRequest = (error: string, cause: string | Record<string, unknown>, errorCode: number): void => {
+export const throwBadRequest = (
+  error: string,
+  cause: string | Record<string, unknown>,
+  errorCode: number
+): void => {
   throw new BadRequestException({
     message: error,
     cause: cause,
-    errorCode: errorCode,
+    errorCode: errorCode
   });
 };
 
 // 502
-export const throwBadGateway = (error: string, cause: string | Record<string, unknown>, errorCode: number): void => {
+export const throwBadGateway = (
+  error: string,
+  cause: string | Record<string, unknown>,
+  errorCode: number
+): void => {
   throw new BadGatewayException({
     message: error,
     cause: cause,
-    errorCode: errorCode,
+    errorCode: errorCode
   });
 };
 
 // 409
-export const throwConflict = (error: string, cause: string | Record<string, unknown>, errorCode: number): void => {
+export const throwConflict = (
+  error: string,
+  cause: string | Record<string, unknown>,
+  errorCode: number
+): void => {
   throw new ConflictException({
     message: error,
     cause: cause,
-    errorCode: errorCode,
+    errorCode: errorCode
   });
 };
 
 // 403
-export const throwForbidden = (error: string, cause: string | Record<string, unknown>, errorCode: number): void => {
+export const throwForbidden = (
+  error: string,
+  cause: string | Record<string, unknown>,
+  errorCode: number
+): void => {
   throw new ForbiddenException({
     message: error,
     cause: cause,
-    errorCode: errorCode,
+    errorCode: errorCode
   });
 };
 
@@ -52,12 +68,12 @@ export const throwForbidden = (error: string, cause: string | Record<string, unk
 export const throwGatewayTimeout = (
   error: string,
   cause: string | Record<string, unknown>,
-  errorCode: number,
+  errorCode: number
 ): void => {
   throw new GatewayTimeoutException({
     message: error,
     cause: cause,
-    errorCode: errorCode,
+    errorCode: errorCode
   });
 };
 
@@ -65,12 +81,12 @@ export const throwGatewayTimeout = (
 export const throwInternalServerError = (
   error: string,
   cause: string | Record<string, unknown>,
-  errorCode: number,
+  errorCode: number
 ): void => {
   throw new InternalServerErrorException({
     message: error,
     cause: cause,
-    errorCode: errorCode,
+    errorCode: errorCode
   });
 };
 
@@ -78,12 +94,12 @@ export const throwInternalServerError = (
 export const throwMethodNotAllowed = (
   error: string,
   cause: string | Record<string, unknown>,
-  errorCode: number,
+  errorCode: number
 ): void => {
   throw new MethodNotAllowedException({
     message: error,
     cause: cause,
-    errorCode: errorCode,
+    errorCode: errorCode
   });
 };
 
@@ -91,12 +107,12 @@ export const throwMethodNotAllowed = (
 export const throwRequestTimeout = (
   error: string,
   cause: string | Record<string, unknown>,
-  errorCode: number,
+  errorCode: number
 ): void => {
   throw new RequestTimeoutException({
     message: error,
     cause: cause,
-    errorCode: errorCode,
+    errorCode: errorCode
   });
 };
 
@@ -104,21 +120,25 @@ export const throwRequestTimeout = (
 export const throwServiceUnavailable = (
   error: string,
   cause: string | Record<string, unknown>,
-  errorCode: number,
+  errorCode: number
 ): void => {
   throw new ServiceUnavailableException({
     message: error,
     cause: cause,
-    errorCode: errorCode,
+    errorCode: errorCode
   });
 };
 
 // 401
-export const throwUnauthorized = (error: string, cause: string | Record<string, unknown>, errorCode: number): void => {
+export const throwUnauthorized = (
+  error: string,
+  cause: string | Record<string, unknown>,
+  errorCode: number
+): void => {
   throw new UnauthorizedException({
     message: error,
     cause: cause,
-    errorCode: errorCode,
+    errorCode: errorCode
   });
 };
 
@@ -126,11 +146,11 @@ export const throwUnauthorized = (error: string, cause: string | Record<string, 
 export const UnsupportedMediaType = (
   error: string,
   cause: string | Record<string, unknown>,
-  errorCode: number,
+  errorCode: number
 ): void => {
   throw new UnsupportedMediaTypeException({
     message: error,
     cause: cause,
-    errorCode: errorCode,
+    errorCode: errorCode
   });
 };

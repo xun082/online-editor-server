@@ -1,33 +1,39 @@
+import { ApiProperty } from '@nestjs/swagger';
+import {
+  BaseEntity,
+  CreateDateColumn,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
+} from 'typeorm';
+
 import { ErrorCode } from '@/utils/constant';
 import { ValidateError } from '@/core/exceptions/errors/index';
-import { ApiProperty } from '@nestjs/swagger';
-import { BaseEntity, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 export class CommonEntity extends BaseEntity {
   @ApiProperty({
     description: 'Id',
-    required: true,
+    required: true
   })
   @PrimaryGeneratedColumn({ type: 'bigint' })
   id: number;
 
   @ApiProperty({
     description: '创建时间',
-    required: true,
+    required: true
   })
   @CreateDateColumn({
     nullable: true,
-    name: 'created_at',
+    name: 'created_at'
   })
   createdAt: Date;
 
   @ApiProperty({
     description: '更新时间',
-    required: true,
+    required: true
   })
   @UpdateDateColumn({
     nullable: true,
-    name: 'updated_at',
+    name: 'updated_at'
   })
   updatedAt: Date;
 
@@ -45,7 +51,9 @@ export class CommonEntity extends BaseEntity {
         JSON.parse(extraInfo);
         model.extraInfo = extraInfo;
       } catch (error) {
-        throw new ValidateError(`传入的extraInfo不是合法的JSON数据：${extraInfo}`);
+        throw new ValidateError(
+          `传入的extraInfo不是合法的JSON数据：${extraInfo}`
+        );
       }
     } else if (typeof extraInfo === 'object') {
       model.extraInfo = JSON.stringify(extraInfo);
@@ -54,7 +62,10 @@ export class CommonEntity extends BaseEntity {
 
   static fromEnumFiled(status, mapping, key) {
     if (typeof status !== 'undefined' && status !== null && !mapping[status]) {
-      throw new ValidateError(`传入的字段${key}不在系统允许范围内，请联系我们`, ErrorCode.INVALID);
+      throw new ValidateError(
+        `传入的字段${key}不在系统允许范围内，请联系我们`,
+        ErrorCode.INVALID
+      );
     }
 
     return status;
