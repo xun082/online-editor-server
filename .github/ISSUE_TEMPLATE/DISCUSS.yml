@@ -1,14 +1,14 @@
 ---
-name: "💬 讨论"
+name: '💬 讨论'
 description: 开始讨论
-title: "[Discuss]: Discuss title"
+title: '[Discuss]: Discuss title'
 labels: [discuss]
 assignees: []
 body:
   - type: textarea
     id: description
     attributes:
-      label: 讨论话题 
+      label: 讨论话题
     validations:
       required: true
   - type: textarea
