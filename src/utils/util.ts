@@ -1,4 +1,3 @@
-
 import camelCase from 'lodash.camelcase';
 
 /**
@@ -28,7 +27,8 @@ export function isEnv(env: string): boolean {
  */
 export function randomString(length = 10): string {
   let result = '';
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const characters =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const lastIndex = characters.length - 1;
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * lastIndex));
@@ -155,7 +155,7 @@ export function uniq<T>(a: T[]): T[] {
  * @returns
  */
 export const sleep = async (ms: number): Promise<unknown> => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 };

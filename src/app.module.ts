@@ -8,12 +8,9 @@ import { TasksModule } from './common/tasks/tasks.module';
 import { TimeoutInterceptor } from './core/interceptor/timeout.interceptor';
 import { AllExceptionFilter } from './core/filter/all-exception.filter';
 import { TransformInterceptor } from './core/interceptor/transform.interceptor';
-import { LoginModule } from './api/login/login.module';
-import { UserModule } from './api/user/user.module';
-import { AuthModule } from './api/auth/auth.module';
+import { DatabaseModule } from './database/database.module';
 
 import loadDatabaseConfig from '@/config/mongo.config';
-import { DatabaseModule } from './database/database.module';
 
 const NODE_ENV = process.env.NODE_ENV ? 'production' : 'development';
 
@@ -29,10 +26,10 @@ const NODE_ENV = process.env.NODE_ENV ? 'production' : 'development';
     }),
     DatabaseModule,
     LogsModule,
-    TasksModule,
-    LoginModule,
-    UserModule,
-    AuthModule
+    TasksModule
+    // LoginModule,
+    // UserModule,
+    // AuthModule
   ],
   controllers: [],
   providers: [

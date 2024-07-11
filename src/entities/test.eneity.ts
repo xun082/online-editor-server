@@ -1,7 +1,7 @@
 import { Column, Entity, Index } from 'typeorm';
+import { ApiProperty } from '@nestjs/swagger';
 
 import { CommonEntity } from '@/base/common.entity';
-import { ApiProperty } from '@nestjs/swagger';
 
 @Entity({ name: 'projects' })
 export class TestEntity extends CommonEntity {
@@ -10,28 +10,28 @@ export class TestEntity extends CommonEntity {
   userId: number;
 
   @ApiProperty({
-    description: '项目名称',
+    description: '项目名称'
   })
   @Column({ name: 'project_name', type: 'varchar' })
   projectName: string;
 
   @ApiProperty({
     description: '项目描述',
-    required: false,
+    required: false
   })
   @Column({ name: 'project_description', type: 'varchar' })
   projectDescription: string;
 
   @ApiProperty({
     description: '分享链接',
-    required: false,
+    required: false
   })
   @Column({ name: 'share_url', type: 'varchar', nullable: true })
   shareUrl?: string;
 
   @ApiProperty({
     description: '预览链接',
-    required: false,
+    required: false
   })
   @Column({ name: 'preview_url', type: 'varchar', nullable: true })
   previewUrl?: string;
@@ -40,7 +40,7 @@ export class TestEntity extends CommonEntity {
     description: '扩展信息',
     type: 'object',
     example: { key: 'value', anotherKey: 123 },
-    required: false,
+    required: false
   })
   @Column({ name: 'extra_info', type: 'json', nullable: true })
   extraInfo?: object;

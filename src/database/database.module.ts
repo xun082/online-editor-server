@@ -6,13 +6,14 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { isDev } from '@/utils/util';
 import { TestEntity } from '@/entities/test.eneity';
 
-
 @Global()
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: async (configService: ConfigService): Promise<TypeOrmModuleOptions> => ({
+      useFactory: async (
+        configService: ConfigService
+      ): Promise<TypeOrmModuleOptions> => ({
         type: configService.get<'mysql'>('DATABASE_CONNECTION'),
         host: configService.get<string>('DATABASE_HOST'),
         port: configService.get<number>('DATABASE_PORT'),
@@ -25,15 +26,15 @@ import { TestEntity } from '@/entities/test.eneity';
         timezone: 'Z',
         autoLoadEntities: false,
         logger: 'advanced-console',
-        logging: false,
+        logging: false
       }),
-      inject: [ConfigService],
+      inject: [ConfigService]
     }),
     TypeOrmModule.forFeature([
-     //add entity
-     TestEntity
-    ]),
+      //add entity
+      TestEntity
+    ])
   ],
-  exports: [TypeOrmModule],
+  exports: [TypeOrmModule]
 })
 export class DatabaseModule {}
