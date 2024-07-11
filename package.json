@@ -19,9 +19,9 @@
     "postinstall": "husky install",
     "commit": "git-cz",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "lint:ci": "eslint \"src/**/*.{ts}\"",
+    "lint:ci": "eslint \"src/**/*.ts\"",
     "format": "prettier --write .",
-    "format:ci": "prettier --list-different \"**/*.{ts}\""
+    "format:ci": "prettier --check \"src/**/*.ts\""
   },
   "dependencies": {
     "@fastify/multipart": "^8.2.0",
