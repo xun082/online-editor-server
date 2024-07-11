@@ -1,13 +1,11 @@
-name: "基础建设"
+name: '基础建设'
 description: 需要的基础建设
-labels: [
-  "build"
-]
+labels: ['build']
 body:
   - type: textarea
     id: description
     attributes:
-      label: "📝 基建描述"
+      label: '📝 基建描述'
       description: 描述需要的基础建设
       placeholder: 描述需要的基础建设...
     validations:
@@ -15,7 +13,7 @@ body:
   - type: textarea
     id: links
     attributes:
-      label: "📄 相关链接"
+      label: '📄 相关链接'
       description: 基建技术相关的文档链接等
     validations:
       required: false

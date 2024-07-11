@@ -13,11 +13,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@prisma/client": ["./prisma/client"],
-      "*": [
-        "*",
-        "src/*"
-        ,
-      ]
+      "*": ["*", "src/*"]
     },
     "incremental": true,
     "skipLibCheck": true,
