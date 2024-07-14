@@ -14,12 +14,14 @@ import { TestEntity } from '@/entities/test.eneity';
       useFactory: async (
         configService: ConfigService
       ): Promise<TypeOrmModuleOptions> => ({
+        // TODO 封装为枚举类 咋 src/common/enum/config.enum.ts 文件中
         type: configService.get<'mysql'>('DATABASE_CONNECTION'),
         host: configService.get<string>('DATABASE_HOST'),
         port: configService.get<number>('DATABASE_PORT'),
         username: configService.get<string>('DATABASE_USERNAME'),
         password: configService.get<string>('DATABASE_PASSWORD'),
         database: configService.get<string>('DATABASE_DB_NAME'),
+        // TODO entities 最好是在模块目录下
         entities: [__dirname + './../entities/**.entity{.ts,.js}'],
         namingStrategy: new SnakeNamingStrategy(),
         synchronize: isDev() ? true : false,
